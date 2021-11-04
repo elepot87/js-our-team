@@ -50,10 +50,32 @@ const teamMembers = [
 const teamContainer = document.querySelector(".team-container");
 
 // 3. Iterare gli oggetti dell'array e aggiungere il markup della card del team member nel DOM
-for (let i = 0; i < teamMembers.length; i++) {
-  const teamItem = teamMembers[i];
-  console.log(teamItem);
-  teamContainer.innerHTML += ` <div class="team-card">
+
+// for (let i = 0; i < teamMembers.length; i++) {
+//   const teamItem = teamMembers[i];
+//   console.log(teamItem);
+//   teamContainer.innerHTML += ` <div class="team-card">
+//     <div class="card-image">
+//       <img src="${teamItem.img}" alt="${teamItem.firstLastName}" />
+//     </div>
+//     <div class="card-text">
+//       <h3>${teamItem.firstLastName}</h3>
+//       <p>${teamItem.description}</p>
+//     </div>
+//   </div>`;
+// }
+
+getTeamMember(teamMembers, teamContainer);
+
+/***************************
+FUNZIONI
+ **************************/
+
+function getTeamMember(teamMembers, teamContainer) {
+  for (let i = 0; i < teamMembers.length; i++) {
+    const teamItem = teamMembers[i];
+    console.log(teamItem);
+    teamContainer.innerHTML += ` <div class="team-card">
     <div class="card-image">
       <img src="${teamItem.img}" alt="${teamItem.firstLastName}" />
     </div>
@@ -62,4 +84,5 @@ for (let i = 0; i < teamMembers.length; i++) {
       <p>${teamItem.description}</p>
     </div>
   </div>`;
+  }
 }
