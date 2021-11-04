@@ -9,45 +9,57 @@
 const teamMembers = [
   // Member 1
   {
-    img: "../img/wayne-barnett-founder-ceo.jpg",
+    img: "./img/wayne-barnett-founder-ceo.jpg",
     firstLastName: "Wayne Barnett",
     description: "Founder & CEO",
   },
   //   Member 2
   {
-    img: "../img/angela-caroll-chief-editor.jpg",
+    img: "./img/angela-caroll-chief-editor.jpg",
     firstLastName: "Angela Caroll",
     description: "Chief Editor",
   },
   //   Member 3
   {
-    img: "../img/walter-gordon-office-manager.jpg",
+    img: "./img/walter-gordon-office-manager.jpg",
     firstLastName: "Walter Gordon",
     description: "Office Manager",
   },
   //   Member 4
   {
-    img: "../img/angela-lopez-social-media-manager.jpg",
+    img: "./img/angela-lopez-social-media-manager.jpg",
     firstLastName: "Angela Lopez",
     description: "Social media manager",
   },
   //   Member 5
   {
-    img: "../img/scott-estrada-developer.jpg",
+    img: "./img/scott-estrada-developer.jpg",
     firstLastName: "Scott Estrada",
     description: "Developer",
   },
   //   Member 6
   {
-    img: "../img/barbara-ramos-graphic-designer.jpg",
+    img: "./img/barbara-ramos-graphic-designer.jpg",
     firstLastName: "Barbara Ramos",
     description: "Graphic Designer",
   },
 ];
 
-// // Vedere tutti gli oggetti dell'array
-// for (let i = 0; i < teamMembers.length; i++) {
-//   console.log(teamMembers[i].img);
-//   console.log(teamMembers[i].firstLastName);
-//   console.log(teamMembers[i].description);
-// }
+// 2. Individuare nel DOM l'elemento a cui appendere i team member
+
+const teamContainer = document.querySelector(".team-container");
+
+// 3. Iterare gli oggetti dell'array e aggiungere il markup della card del team member nel DOM
+for (let i = 0; i < teamMembers.length; i++) {
+  const teamItem = teamMembers[i];
+  console.log(teamItem);
+  teamContainer.innerHTML += ` <div class="team-card">
+    <div class="card-image">
+      <img src="${teamItem.img}" alt="${teamItem.firstLastName}" />
+    </div>
+    <div class="card-text">
+      <h3>${teamItem.firstLastName}</h3>
+      <p>${teamItem.description}</p>
+    </div>
+  </div>`;
+}
