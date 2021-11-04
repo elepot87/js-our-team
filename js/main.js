@@ -70,6 +70,10 @@ btnAdd.addEventListener("click", function addNewMember() {
   console.log(teamMembers);
   //   Richiamo la funzione per inserire nel DOM tutti i miei team members
   getTeamMember(teamMembers, teamContainer);
+  //   Ripulisco gli input
+  emptyImput("name");
+  emptyImput("role");
+  emptyImput("image");
 });
 
 /***************************
@@ -112,4 +116,10 @@ function addNewMember() {
 
   //   Richiamo la funzione per inserire nel DOM tutti i miei team members
   getTeamMember(teamMembers, teamContainer);
+}
+
+// Funzione per pulire i dati degli input inseriti da utente
+
+function emptyImput(idInput) {
+  document.getElementById(idInput).value = "";
 }
