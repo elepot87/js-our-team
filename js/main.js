@@ -49,23 +49,28 @@ const teamMembers = [
 
 const teamContainer = document.querySelector(".team-container");
 
-// 3. Iterare gli oggetti dell'array e aggiungere il markup della card del team member nel DOM
-
-// for (let i = 0; i < teamMembers.length; i++) {
-//   const teamItem = teamMembers[i];
-//   console.log(teamItem);
-//   teamContainer.innerHTML += ` <div class="team-card">
-//     <div class="card-image">
-//       <img src="${teamItem.img}" alt="${teamItem.firstLastName}" />
-//     </div>
-//     <div class="card-text">
-//       <h3>${teamItem.firstLastName}</h3>
-//       <p>${teamItem.description}</p>
-//     </div>
-//   </div>`;
-// }
+// 3. Iterare gli oggetti dell'array e aggiungere il markup della card del team member nel DOM. Fare funzione che si può riutilizzare
 
 getTeamMember(teamMembers, teamContainer);
+
+// 4. Utente inserisce valori nel form, clicca sul btn Add e nel DOM viene stampato il nuovo team member
+
+const btnAdd = document.getElementById("addMemberButton");
+
+btnAdd.addEventListener("click", function addNewMember() {
+  // Creo variabile prendendo i dati del nuovo team member dal valore degli input
+  const newMember = {
+    img: document.getElementById("image").value,
+    firstLastName: document.getElementById("name").value,
+    description: document.getElementById("role").value,
+  };
+  console.log(newMember);
+  //   Inserisco l'oggetto nuovo nell'array del team member
+  teamMembers.push(newMember);
+  console.log(teamMembers);
+  //   Richiamo la funzione per inserire nel DOM tutti i miei team members
+  getTeamMember(teamMembers, teamContainer);
+});
 
 /***************************
 FUNZIONI
@@ -88,4 +93,19 @@ function getTeamMember(teamMembers, teamContainer) {
     </div>
   </div>`;
   }
+}
+
+function addNewMember() {
+  // Creo variabile prendendo i dati del nuovo team member dal valore degli input
+  const newMember = {
+    img: document.getElementById("image").value,
+    firstLastName: document.getElementById("name").value,
+    description: document.getElementById("role").value,
+  };
+  console.log(newMember);
+  //   Inserisco l'oggetto nuovo nell'array del team member
+  teamMembers.push(newMember);
+  console.log(teamMembers);
+  //   Richiamo la funzione per inserire nel DOM tutti i miei team members
+  getTeamMember(teamMembers, teamContainer);
 }
