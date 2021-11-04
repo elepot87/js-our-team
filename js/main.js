@@ -69,9 +69,12 @@ getTeamMember(teamMembers, teamContainer);
 
 /***************************
 FUNZIONI
- **************************/
+****************************/
 
 function getTeamMember(teamMembers, teamContainer) {
+  // Pulizia di elementi
+  teamContainer.innerHTML = "";
+  //   Iterazione degli oggetti dell'array e inserimento del markup nel DOM
   for (let i = 0; i < teamMembers.length; i++) {
     const teamItem = teamMembers[i];
     console.log(teamItem);
