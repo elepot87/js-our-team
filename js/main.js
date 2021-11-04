@@ -76,9 +76,12 @@ btnAdd.addEventListener("click", function addNewMember() {
 FUNZIONI
 ****************************/
 
+// Funzione per restituire oggetti dell'array (membri del team) e stamparli nel DOM
+
 function getTeamMember(teamMembers, teamContainer) {
   // Pulizia di elementi
   teamContainer.innerHTML = "";
+
   //   Iterazione degli oggetti dell'array e inserimento del markup nel DOM
   for (let i = 0; i < teamMembers.length; i++) {
     const teamItem = teamMembers[i];
@@ -95,6 +98,7 @@ function getTeamMember(teamMembers, teamContainer) {
   }
 }
 
+// Funzione per aggiungere nuovi membri del tea, prendendoli dai dati inseriti dall'utente
 function addNewMember() {
   // Creo variabile prendendo i dati del nuovo team member dal valore degli input
   const newMember = {
@@ -102,10 +106,10 @@ function addNewMember() {
     firstLastName: document.getElementById("name").value,
     description: document.getElementById("role").value,
   };
-  console.log(newMember);
+
   //   Inserisco l'oggetto nuovo nell'array del team member
   teamMembers.push(newMember);
-  console.log(teamMembers);
+
   //   Richiamo la funzione per inserire nel DOM tutti i miei team members
   getTeamMember(teamMembers, teamContainer);
 }
