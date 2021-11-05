@@ -57,19 +57,10 @@ getTeamMember(teamMembers, teamContainer);
 
 const btnAdd = document.getElementById("addMemberButton");
 
-btnAdd.addEventListener("click", function addNewMember() {
-  // Creo variabile prendendo i dati del nuovo team member dal valore degli input
-  const newMember = {
-    img: document.getElementById("image").value,
-    firstLastName: document.getElementById("name").value,
-    description: document.getElementById("role").value,
-  };
-  console.log(newMember);
-  //   Inserisco l'oggetto nuovo nell'array del team member
-  teamMembers.push(newMember);
-  console.log(teamMembers);
-  //   Richiamo la funzione per inserire nel DOM tutti i miei team members
-  getTeamMember(teamMembers, teamContainer);
+btnAdd.addEventListener("click", function () {
+  // Richiamo la funzione per aggiungere un nuovo membro
+  const newMember = addNewMember();
+  //
   //   Ripulisco gli input
   emptyImput("name");
   emptyImput("role");
