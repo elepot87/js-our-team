@@ -93,7 +93,7 @@ function getTeamMember(teamMembers, teamContainer) {
   }
 }
 
-// Funzione per aggiungere nuovi membri del tea, prendendoli dai dati inseriti dall'utente
+// Funzione per aggiungere nuovi membri del team, prendendoli dai dati inseriti dall'utente
 function addNewMember() {
   // Creo variabile prendendo i dati del nuovo team member dal valore degli input
   const newMember = {
